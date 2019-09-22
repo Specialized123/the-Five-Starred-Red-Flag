@@ -1,0 +1,193 @@
+import turtle
+
+import math
+
+
+"""
+定义小五角星画法
+"""
+def L_star ():
+    turtle.left(180)
+
+    turtle.forward(11)
+
+    turtle.left(180)
+
+    turtle.left(18)
+
+    turtle.down()
+
+    turtle.begin_fill()
+
+    turtle.fillcolor("yellow")
+
+    turtle.pencolor("yellow")
+
+    for i in range(5):
+        turtle.forward(19.8)
+        turtle.right(144)
+
+    turtle.end_fill()
+
+    turtle.up()
+
+
+
+turtle.speed(8)
+
+###################################
+#k开始绘制
+###################################
+turtle.up()
+
+#为了实现国旗（比例330:220）在中间显示，首先把起始点移到绝对位置（-165，-110）
+
+"""
+开始画旗面
+"""
+turtle.goto(-165,-110)
+
+turtle.down()
+
+turtle.begin_fill()
+
+turtle.fillcolor("red")
+
+turtle.pencolor("red")
+
+turtle.forward(330)
+
+turtle.left(90)
+
+turtle.forward(220)
+
+turtle.left(90)
+
+turtle.forward(330)
+
+turtle.left(90)
+
+turtle.forward(220)
+
+turtle.end_fill()
+
+turtle.left(180)
+
+turtle.up()
+
+"""
+旗面画完
+"""
+
+"""
+开始画大五角星
+"""
+turtle.goto(-143,66)
+
+turtle.right(90)
+
+turtle.down()
+
+turtle.begin_fill()
+
+turtle.fillcolor("yellow")
+
+turtle.pencolor("yellow")
+
+for i in range (5):
+    turtle.forward(66)
+    turtle.right(144)
+
+turtle.end_fill()
+
+turtle.up()
+"""
+大五角星画完
+开始小五角星
+"""
+
+#turtle.speed(1)
+
+
+turtle.goto(-110,55)
+
+turtle.left(30.96)
+
+turtle.forward(64.141)
+
+L_star()
+#第一个小五角星
+
+
+turtle.right(18)
+                   #回心
+turtle.forward(11)
+
+
+turtle.left(180)
+
+turtle.forward(64.141)
+
+turtle.left(180)
+
+turtle.right(30.96-(math.degrees(math.atan(0.1429))))
+
+turtle.forward(77.782)
+
+L_star()
+#第二个小五角星
+
+
+turtle.right(18)
+                   #回心
+turtle.forward(11)
+
+
+turtle.left(180)
+
+turtle.forward(77.782)
+
+turtle.left(180)
+
+
+
+
+
+turtle.right((math.degrees(math.atan(0.1429))+math.degrees(math.atan(0.2857))))
+
+turtle.forward(80.0812)
+
+L_star()
+#第三个小五角星
+
+
+turtle.right(18)
+                   #回心
+turtle.forward(11)
+
+
+
+turtle.left(180)
+
+turtle.forward(80.0812)
+
+turtle.left(180)
+
+
+
+
+turtle.right((math.degrees(math.acos(0.27472))-math.degrees(math.acos(0.6247))))
+
+turtle.forward(70.43432)
+
+L_star()
+#第四个小五角星
+
+turtle.goto(-165,-110)
+
+turtle.pencolor("white")
+
+turtle.fillcolor("white")
+#归位
+
+turtle.done()
